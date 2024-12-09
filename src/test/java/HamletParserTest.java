@@ -15,17 +15,25 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        String changeWord = hamletParser.changeHamletToLeon();
+        assertEquals(true, changeWord.contains("Leon"));
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        String changeWord = hamletParser.changeHoratioToTariq();
+        assertFalse(changeWord.contains("Horatio"));
+        assertTrue(changeWord.contains("Tariq"));
     }
 
     @Test
     public void testFindHoratio() {
+        assertTrue(hamletText.contains("Horatio"));
     }
 
     @Test
     public void testFindHamlet() {
+        assertTrue(hamletText.contains("Hamlet"));
+
     }
 }

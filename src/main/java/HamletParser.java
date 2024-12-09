@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.*;
 
 /**
  * Created by thook on 10/7/15.
@@ -10,6 +11,7 @@ public class HamletParser {
     private String hamletData;
 
     public HamletParser(){
+
         this.hamletData = loadFile();
     }
 
@@ -33,7 +35,21 @@ public class HamletParser {
     }
 
     public String getHamletData(){
+
         return hamletData;
     }
+
+    public String changeHamletToLeon() {
+        Pattern pattern = Pattern.compile("\\bHamlet\\b");
+        Matcher matcher = pattern.matcher(hamletData);
+        return matcher.replaceAll("Leon");
+    }
+
+    public String changeHoratioToTariq() {
+        Pattern pattern = Pattern.compile("\\bHoratio\\b");
+        Matcher matcher = pattern.matcher(hamletData);
+        return matcher.replaceAll("Tariq");
+    }
+
 
 }
